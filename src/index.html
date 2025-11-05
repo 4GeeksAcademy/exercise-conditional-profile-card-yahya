@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,82 +9,174 @@
       src="https://kit.fontawesome.com/072e5df971.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .card {
+        border-radius: 1rem;
+      }
+
+      /* Tarjeta de vista previa más grande */
+      #widget_content {
+        transform: scale(1.3);
+        transform-origin: top center;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      /* Mejora visual del formulario */
+      .filters .form-control,
+      .filters .form-select {
+        height: 45px;
+      }
+
+      .filters label {
+        font-weight: 600;
+      }
+    </style>
   </head>
 
   <body>
-    <ul class="filters">
-      <li>
-        <label>Include Cover</label>
-        <select class="picker" for="includeCover">
-          <option value="">Include Cover</option>
-          <option value="true">True</option>
-          <option value="false">False</option>
-        </select>
-      </li>
-      <li>
-        <label>Name</label>
-        <input class="picker" for="name" type="text" />
-      </li>
-      <li>
-        <label>Last Name</label>
-        <input class="picker" for="lastName" type="text" />
-      </li>
-      <li>
-        <label>S.M. Position</label>
-        <select class="picker" for="socialMediaPosition">
-          <option value="position-left">Left</option>
-          <option value="position-right">Right</option>
-        </select>
-      </li>
-      <li>
-        <label>Twitter</label>
-        <input class="picker" for="twitter" type="text" />
-      </li>
-      <li>
-        <label>Github</label>
-        <input class="picker" for="github" type="text" />
-      </li>
-      <li>
-        <label>LinkedIn</label>
-        <input class="picker" for="linkedin" type="text" />
-      </li>
-      <li>
-        <label>Instagram</label>
-        <input class="picker" for="instagram" type="text" />
-      </li>
-      <li>
-        <label>Role</label>
-        <select class="picker" for="role">
-          <option value="">null</option>
-          <option value="Web Developer">Web Developer</option>
-          <option value="Floor Planner">Floor Planner</option>
-          <option value="Technical Writter">Technical Writter</option>
-        </select>
-      </li>
-      <li>
-        <label>City</label>
-        <select class="picker" for="city">
-          <option value="">null</option>
-          <option value="Miami">Miami</option>
-          <option value="Munich">Munich</option>
-          <option value="Caracas">Caracas</option>
-          <option value="Toronto">Toronto</option>
-        </select>
-      </li>
-      <li>
-        <label>Country</label>
-        <select class="picker" for="country">
-          <option value="">null</option>
-          <option value="USA">USA</option>
-          <option value="Germany">Germany</option>
-          <option value="Canada">Canada</option>
-          <option value="Venezuela">Venezuela</option>
-        </select>
-      </li>
-    </ul>
-    <div id="widget_content"></div>
+    <div class="container my-5">
+      <div class="row g-5">
+        <!-- 🧩 Formulario -->
+        <div class="col-lg-6">
+          <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white text-center py-3">
+              <h4 class="mb-0">
+                <i class="fas fa-sliders-h me-2"></i>Configuración del Widget
+              </h4>
+            </div>
 
-    <!-- do not remove this bundle.js tag -->
+            <div class="card-body filters">
+              <div class="row g-3">
+                <!-- Agrupamos de 3 en 3 -->
+                <div class="col-md-4">
+                  <label class="form-label">Include Cover</label>
+                  <select class="form-select picker" for="includeCover">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Name</label>
+                  <input class="form-control picker" for="name" type="text" />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Last Name</label>
+                  <input
+                    class="form-control picker"
+                    for="lastName"
+                    type="text"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">S.M. Position</label>
+                  <select class="form-select picker" for="socialMediaPosition">
+                    <option value="position-left">Left</option>
+                    <option value="position-right">Right</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Twitter</label>
+                  <input
+                    class="form-control picker"
+                    for="twitter"
+                    type="text"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Github</label>
+                  <input class="form-control picker" for="github" type="text" />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">LinkedIn</label>
+                  <input
+                    class="form-control picker"
+                    for="linkedin"
+                    type="text"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Instagram</label>
+                  <input
+                    class="form-control picker"
+                    for="instagram"
+                    type="text"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label">Role</label>
+                  <select class="form-select picker" for="role">
+                    <option value="">null</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Floor Planner">Floor Planner</option>
+                    <option value="Technical Writter">Technical Writter</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">City</label>
+                  <select class="form-select picker" for="city">
+                    <option value="">null</option>
+                    <option value="Miami">Miami</option>
+                    <option value="Munich">Munich</option>
+                    <option value="Caracas">Caracas</option>
+                    <option value="Toronto">Toronto</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Country</label>
+                  <select class="form-select picker" for="country">
+                    <option value="">null</option>
+                    <option value="USA">USA</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Venezuela">Venezuela</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💳 Card de vista previa -->
+        <div class="col-lg-6 d-flex justify-content-center align-items-start">
+          <div
+            id="widget_content"
+            class="card shadow-lg border-0 text-center p-4"
+            style="width: 100%; max-width: 500px;"
+          >
+            <div class="text-muted fst-italic">
+              Tu tarjeta aparecerá aquí 👇
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu script principal -->
     <script type="text/javascript" src="/main.bundle.js"></script>
   </body>
 </html>
